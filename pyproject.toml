@@ -1,0 +1,56 @@
+[project]
+name = "iran-cloud-status-mcp"
+version = "0.1.0"
+description = "Unofficial read-only MCP server for Iranian cloud providers: live status, incidents, maintenance and public prices of ArvanCloud, Hamravesh, Chabokan and Liara."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Sepehr Radmard", email = "sepehrr80@gmail.com" }]
+requires-python = ">=3.10"
+keywords = ["mcp", "model-context-protocol", "iran", "cloud", "status-page", "incidents", "uptime", "arvancloud", "hamravesh", "chabokan", "liara", "pricing", "devops", "claude", "persian"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: System :: Monitoring",
+]
+dependencies = [
+    "mcp>=2.2,<3",
+    "httpx>=0.27",
+    "httpx-curl-cffi>=0.1.5",
+    "curl-cffi>=0.16.3",
+]
+
+[project.urls]
+Homepage = "https://github.com/sepehr071/iran-cloud-status-mcp"
+Issues = "https://github.com/sepehr071/iran-cloud-status-mcp/issues"
+Website = "https://mcpfarsi.ir/"
+
+[project.scripts]
+iran-cloud-status-mcp = "iran_cloud_status_mcp.server:main"
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-m 'not live'"
+markers = ["live: calls the real status pages (run with -m live)"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]  # long Field(description=...) strings read better on one line

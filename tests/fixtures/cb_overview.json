@@ -1,0 +1,10 @@
+{
+ "overall_status": "operational",
+ "operational_count": 31,
+ "degraded_count": 0,
+ "maintenance_count": 0,
+ "down_count": 0,
+ "total_services": 31,
+ "active_incidents": 0,
+ "upcoming_maintenances": 0
+}

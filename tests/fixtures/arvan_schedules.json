@@ -1,0 +1,98 @@
+{
+ "data": [
+  {
+   "id": "34",
+   "type": "schedules",
+   "attributes": {
+    "id": 34,
+    "name": "Scheduled Maintenance: DBaaS MySQL Upgrade to Version 8.4",
+    "message": "As previously announced, we will perform scheduled maintenance to upgrade DBaaS instances running MySQL 8.0 to MySQL 8.4 LTS.\n\nDuring the maintenance window, affected database instances may experience temporary service interruptions while the upgrade is in progress.\n\nWe will make every effort to minimize service disruption and restore normal operations as quickly as possible.\n",
+    "status": {
+     "human": "Upcoming",
+     "value": 0
+    },
+    "scheduled": {
+     "human": "2 days from now",
+     "string": "2026-11-03 02:00:00"
+    },
+    "completed": {
+     "human": "2 days from now",
+     "string": "2026-11-03 06:00:00"
+    },
+    "created": {
+     "human": "3 days ago",
+     "string": "2026-10-28 11:25:53"
+    },
+    "updated": {
+     "human": "3 days ago",
+     "string": "2026-10-28 11:25:53"
+    }
+   }
+  },
+  {
+   "id": "1",
+   "type": "schedules",
+   "attributes": {
+    "id": 1,
+    "name": "Database Endpoint Update – Accounting & Live Services",
+    "message": "During the maintenance period, API database addresses for Accounting and Live services will be updated.\nSome features such as video upload, live creation, and new user registration may experience temporary disruptions.\nPlayback of existing videos, advertisements, and previously created live streams will continue without interruption.",
+    "status": {
+     "human": "Complete",
+     "value": 2
+    },
+    "scheduled": {
+     "human": "6 months ago",
+     "string": "2026-04-26 00:00:00"
+    },
+    "completed": {
+     "human": "6 months ago",
+     "string": "2026-04-26 00:02:00"
+    },
+    "created": {
+     "human": "6 months ago",
+     "string": "2026-04-23 14:31:15"
+    },
+    "updated": {
+     "human": "6 months ago",
+     "string": "2026-04-23 14:31:15"
+    }
+   }
+  },
+  {
+   "id": "2",
+   "type": "schedules",
+   "attributes": {
+    "id": 2,
+    "name": "VoD Essential Maintenance",
+    "message": "There will be an Essential Maintenance on the VoD platform. This maintenance will only affect video convertion. Newly uploaded videos may remain in the convert queue for a short time before they begin their convertion process. Videos previously uploaded will play as normal. ",
+    "status": {
+     "human": "Complete",
+     "value": 2
+    },
+    "scheduled": {
+     "human": "5 months ago",
+     "string": "2026-05-06 00:00:00"
+    },
+    "completed": {
+     "human": "5 months ago",
+     "string": "2026-05-06 01:00:00"
+    },
+    "created": {
+     "human": "5 months ago",
+     "string": "2026-05-05 16:13:47"
+    },
+    "updated": {
+     "human": "5 months ago",
+     "string": "2026-05-05 16:13:47"
+    }
+   }
+  }
+ ],
+ "meta": {
+  "current_page": 1,
+  "from": 1,
+  "path": "https://www.arvancloudstatus.ir/api/schedules",
+  "per_page": "100",
+  "to": 33
+ }
+}

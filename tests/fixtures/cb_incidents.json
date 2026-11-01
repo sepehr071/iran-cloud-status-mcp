@@ -1,0 +1,242 @@
+{
+ "count": 4,
+ "next": null,
+ "previous": null,
+ "results": [
+  {
+   "id": 4,
+   "title": "اختلال در تماس‌های تلفنی",
+   "description": "پیرو بررسی صورت گرفته، درحال حاضر تلفن تماس دچار مشکل شده و تماس‌ها ممکن است با اختلال و قطعی همراه باشند. ضمن عذرخواهی بابت این موضوع، خواهشمند است درصورت بروز مشکل از طریق تیکت با واحد پشتیبانی در تماس باشید.",
+   "services": [
+    {
+     "id": 7,
+     "name": "تلفن",
+     "description": "",
+     "category": null,
+     "status": "operational",
+     "status_display": "عملیاتی",
+     "status_color": "#10b981",
+     "order": 0,
+     "updated_at": "2026-05-07T15:57:16.674220+03:30"
+    }
+   ],
+   "updates": [
+    {
+     "id": 4,
+     "title": "رفع مشکل تماس",
+     "message": "با تلاش های زیاد موفق شدیم مشکل تلفن و تماس های دریافتی برطرف کنیم.",
+     "status": "resolved",
+     "status_display": "برطرف شده",
+     "created_at": "2026-05-07T15:57:16.567686+03:30"
+    }
+   ],
+   "status": "resolved",
+   "status_display": "برطرف شده",
+   "status_color": "#10b981",
+   "severity": "major",
+   "severity_display": "عمده",
+   "started_at": "2026-02-28T15:32:08+03:30",
+   "resolved_at": "2026-05-07T15:57:16.625498+03:30",
+   "is_active": true,
+   "created_at": "2026-02-28T15:32:38.227895+03:30",
+   "updated_at": "2026-05-07T15:57:16.626967+03:30"
+  },
+  {
+   "id": 3,
+   "title": "اختلال سراسری در دسترسی",
+   "description": "به اطلاع می‌رسانیم هم‌اکنون به دلیل اختلال اینترنت سراسری، تمامی سرویس های خارج از ایران دردسترس نمی‌باشند و برخی از سرویس های داخل ایران نیز با اختلال دسترسی مواجه هستند. این موضوع در لایه زیر ساخت می‌باشد، پس از برطرف شدن محدودیت‌ها در شبکه زیرساخت ، دسترسی به حالت عادی بازخواهد گشت. وضعیت به‌صورت مستمر در حال بررسی میباشد و در صورت نیاز، اطلاع‌رسانی لازم انجام خواهد شد.",
+   "services": [
+    {
+     "id": 31,
+     "name": "ایمیل سرور",
+     "description": "",
+     "category": 3,
+     "category_name": "کانتینر ابری",
+     "status": "operational",
+     "status_display": "عملیاتی",
+     "status_color": "#10b981",
+     "order": 0,
+     "updated_at": "2026-06-13T15:04:50.981234+03:30"
+    },
+    {
+     "id": 16,
+     "name": "تغییر NS",
+     "description": "",
+     "category": 4,
+     "category_name": "ثبت و انتقال دامنه",
+     "status": "operational",
+     "status_display": "عملیاتی",
+     "status_color": "#10b981",
+     "order": 0,
+     "updated_at": "2026-06-13T15:04:50.984805+03:30"
+    },
+    {
+     "id": 30,
+     "name": "حساب کاربری کلودیوا",
+     "description": "",
+     "category": null,
+     "status": "operational",
+     "status_display": "عملیاتی",
+     "status_color": "#10b981",
+     "order": 0,
+     "updated_at": "2026-06-13T15:04:50.988467+03:30"
+    },
+    {
+     "id": 18,
+     "name": "دستیار مدیریت سرور",
+     "description": "",
+     "category": 1,
+     "category_name": "دستیار مدیریت سرور",
+     "status": "operational",
+     "status_display": "عملیاتی",
+     "status_color": "#10b981",
+     "order": 0,
+     "updated_at": "2026-06-13T15:04:50.992057+03:30"
+    },
+    {
+     "id": 28,
+     "name": "سایت کلودیوا",
+     "description": "",
+     "category": null,
+     "status": "operational",
+     "status_display": "عملیاتی",
+     "status_color": "#10b981",
+     "order": 0,
+     "updated_at": "2026-06-13T15:04:50.995718+03:30"
+    },
+    {
+     "id": 2,
+     "name": "کلاستر آسیاتک",
+     "description": "ظززظط",
+     "category": 3,
+     "category_name": "کانتینر ابری",
+     "status": "operational",
+     "status_display": "عملیاتی",
+     "status_color": "#10b981",
+     "order": 0,
+     "updated_at": "2026-06-13T15:04:50.999138+03:30"
+    },
+    {
+     "id": 19,
+     "name": "کلاستر آلمان",
+     "description": "",
+     "category": 3,
+     "category_name": "کانتینر ابری",
+     "status": "operational",
+     "status_display": "عملیاتی",
+     "status_color": "#10b981",
+     "order": 0,
+     "updated_at": "2026-06-13T15:04:51.002654+03:30"
+    },
+    {
+     "id": 4,
+     "name": "کلاستر امین",
+     "description": "شسیشسیش",
+     "category": 3,
+     "category_name": "کانتینر ابری",
+     "status": "operational",
+     "status_display": "عملیاتی",
+     "status_color": "#10b981",
+     "order": 0,
+     "updated_at": "2026-06-13T15:04:51.005918+03:30"
+    },
+    {
+     "id": 1,
+     "name": "کلاستر صفر و یک",
+     "description": "سیسسیسیسی",
+     "category": 3,
+     "category_name": "کانتینر ابری",
+     "status": "operational",
+     "status_display": "عملیاتی",
+     "status_color": "#10b981",
+     "order": 0,
+     "updated_at": "2026-06-13T15:04:51.009521+03:30"
+    },
+    {
+     "id": 21,
+     "name": "کلاستر فرانسه",
+     "description": "",
+     "category": 3,
+     "category_name": "کانتینر ابری",
+     "status": "operational",
+     "status_display": "عملیاتی",
+     "status_color": "#10b981",
+     "order": 0,
+     "updated_at": "2026-06-13T15:04:51.013055+03:30"
+    },
+    {
+     "id": 20,
+     "name": "کلاستر فنلاند",
+     "description": "",
+     "category": 3,
+     "category_name": "کانتینر ابری",
+     "status": "operational",
+     "status_display": "عملیاتی",
+     "status_color": "#10b981",
+     "order": 0,
+     "updated_at": "2026-06-13T15:04:51.016433+03:30"
+    },
+    {
+     "id": 5,
+     "name": "کلاستر های وب",
+     "description": "شی",
+     "category": 3,
+     "category_name": "کانتینر ابری",
+     "status": "operational",
+     "status_display": "عملیاتی",
+     "status_color": "#10b981",
+     "order": 0,
+     "updated_at": "2026-06-13T15:04:51.019949+03:30"
+    },
+    {
+     "id": 11,
+     "name": "گیت رستم",
+     "description": "",
+     "category": 3,
+     "category_name": "کانتینر ابری",
+     "status": "operational",
+     "status_display": "عملیاتی",
+     "status_color": "#10b981",
+     "order": 0,
+     "updated_at": "2026-06-13T15:04:51.023298+03:30"
+    }
+   ],
+   "updates": [
+    {
+     "id": 6,
+     "title": "رفع مشکل اینترنت بین الملل",
+     "message": "مشکل اینترنت بین الملل درحال بهبود هست و دسترسی اکثر سرویس ها متصل شده است",
+     "status": "resolved",
+     "status_display": "برطرف شده",
+     "created_at": "2026-06-13T15:04:50.975502+03:30"
+    },
+    {
+     "id": 5,
+     "title": "رفع مشکل کامل بخش دامنه ها",
+     "message": "بخش دامنه ها هم اکنون کامل و بدون اختلال در دسترس هستند",
+     "status": "investigating",
+     "status_display": "در حال بررسی",
+     "created_at": "2026-05-07T15:58:30.486816+03:30"
+    },
+    {
+     "id": 3,
+     "title": "رفع مشکل ثبت دامنه جدید",
+     "message": "مشکل ثبت دامنه جدید برطرف شده است",
+     "status": "investigating",
+     "status_display": "در حال بررسی",
+     "created_at": "2026-03-19T02:58:22.907856+03:30"
+    }
+   ],
+   "status": "resolved",
+   "status_display": "برطرف شده",
+   "status_color": "#10b981",
+   "severity": "critical",
+   "severity_display": "بحرانی",
+   "started_at": "2026-02-28T15:30:17+03:30",
+   "resolved_at": "2026-06-13T15:04:50.918394+03:30",
+   "is_active": true,
+   "created_at": "2026-02-28T15:31:56.460545+03:30",
+   "updated_at": "2026-06-13T15:04:50.918629+03:30"
+  }
+ ]
+}

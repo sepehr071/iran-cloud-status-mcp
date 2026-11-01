@@ -1,0 +1,166 @@
+{
+ "data": [
+  {
+   "id": "51",
+   "type": "components",
+   "attributes": {
+    "id": 51,
+    "name": "Shahriar - Docker Registry",
+    "description": null,
+    "link": null,
+    "order": null,
+    "status": {
+     "human": "Performance Issues",
+     "value": 2
+    },
+    "enabled": true,
+    "meta": null,
+    "created": {
+     "human": "6 months ago",
+     "string": "2026-04-01 14:56:02"
+    },
+    "updated": {
+     "human": "6 months ago",
+     "string": "2026-04-01 14:56:02"
+    }
+   },
+   "relationships": {
+    "group": {
+     "data": {
+      "type": "componentGroups",
+      "id": "7"
+     }
+    }
+   }
+  },
+  {
+   "id": "50",
+   "type": "components",
+   "attributes": {
+    "id": 50,
+    "name": "Simin - Lib",
+    "description": null,
+    "link": null,
+    "order": 11,
+    "status": {
+     "human": "Operational",
+     "value": 1
+    },
+    "enabled": true,
+    "meta": null,
+    "created": {
+     "human": "7 months ago",
+     "string": "2026-03-31 02:04:07"
+    },
+    "updated": {
+     "human": "6 months ago",
+     "string": "2026-04-04 18:36:37"
+    }
+   },
+   "relationships": {
+    "group": {
+     "data": {
+      "type": "componentGroups",
+      "id": "3"
+     }
+    }
+   }
+  },
+  {
+   "id": "58",
+   "type": "components",
+   "attributes": {
+    "id": 58,
+    "name": "Qeysar - Network",
+    "description": null,
+    "link": null,
+    "order": null,
+    "status": {
+     "human": "Operational",
+     "value": 1
+    },
+    "enabled": true,
+    "meta": null,
+    "created": {
+     "human": "2 weeks ago",
+     "string": "2026-10-11 00:22:31"
+    },
+    "updated": {
+     "human": "2 weeks ago",
+     "string": "2026-10-11 00:22:31"
+    }
+   },
+   "relationships": {
+    "group": {
+     "data": {
+      "type": "componentGroups",
+      "id": "10"
+     }
+    }
+   }
+  }
+ ],
+ "meta": {
+  "current_page": 1,
+  "from": 1,
+  "path": "https://www.arvancloudstatus.ir/api/components",
+  "per_page": "100",
+  "to": 53
+ },
+ "included": [
+  {
+   "id": "7",
+   "type": "componentGroups",
+   "attributes": {
+    "id": 7,
+    "name": "Shahriar (ir-northwest-a)",
+    "order": 5,
+    "visible": 1,
+    "created": {
+     "human": "7 months ago",
+     "string": "2026-03-16 17:11:32"
+    },
+    "updated": {
+     "human": "3 months ago",
+     "string": "2026-07-27 12:54:42"
+    }
+   }
+  },
+  {
+   "id": "3",
+   "type": "componentGroups",
+   "attributes": {
+    "id": 3,
+    "name": "Simin (ir-central1-b)",
+    "order": 3,
+    "visible": 1,
+    "created": {
+     "human": "7 months ago",
+     "string": "2026-03-15 15:30:13"
+    },
+    "updated": {
+     "human": "3 months ago",
+     "string": "2026-07-27 12:54:42"
+    }
+   }
+  },
+  {
+   "id": "10",
+   "type": "componentGroups",
+   "attributes": {
+    "id": 10,
+    "name": "Qeysar (ir-southwest1-a)",
+    "order": 7,
+    "visible": 1,
+    "created": {
+     "human": "3 months ago",
+     "string": "2026-07-27 12:53:41"
+    },
+    "updated": {
+     "human": "3 months ago",
+     "string": "2026-07-27 12:54:42"
+    }
+   }
+  }
+ ]
+}

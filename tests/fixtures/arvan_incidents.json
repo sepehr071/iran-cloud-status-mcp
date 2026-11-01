@@ -1,0 +1,371 @@
+{
+ "data": [
+  {
+   "id": "101",
+   "type": "incidents",
+   "attributes": {
+    "id": 101,
+    "guid": "aaa0eaae-ee18-45ee-a0f8-77d12b4e1691",
+    "name": "Simin object storage latency",
+    "message": "We have identified latency on object storage in simin (ir-central1) in GET and PUT operations. We are investigating the issue.\nUsers may experience latency on:\n- Loading objects\n- Loading Cloud logs",
+    "visible": 1,
+    "stickied": false,
+    "notifications": false,
+    "status": {
+     "human": "Fixed",
+     "value": 4
+    },
+    "occurred": {
+     "human": "1 day ago",
+     "string": "2026-10-30 02:10:00"
+    },
+    "created": {
+     "human": "1 day ago",
+     "string": "2026-10-30 04:00:47"
+    },
+    "updated": {
+     "human": "1 day ago",
+     "string": "2026-10-30 06:03:00"
+    }
+   },
+   "relationships": {
+    "components": {
+     "data": []
+    },
+    "updates": {
+     "data": [
+      {
+       "type": "updates",
+       "id": "249"
+      },
+      {
+       "type": "updates",
+       "id": "250"
+      },
+      {
+       "type": "updates",
+       "id": "251"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "100",
+   "type": "incidents",
+   "attributes": {
+    "id": 100,
+    "guid": "7490c76a-6537-4d62-8df5-ad2bdb05f4ae",
+    "name": "DNS Resolution Issues",
+    "message": "DNS resolution issues are occurring across all domains on ArvanCloud CDN when accessed from certain PoPs, resulting in domain accessibility issues. The issue is currently under investigation to identify the root cause.",
+    "visible": 1,
+    "stickied": false,
+    "notifications": false,
+    "status": {
+     "human": "Fixed",
+     "value": 4
+    },
+    "occurred": {
+     "human": "4 days ago",
+     "string": "2026-10-27 15:57:10"
+    },
+    "created": {
+     "human": "4 days ago",
+     "string": "2026-10-27 16:31:29"
+    },
+    "updated": {
+     "human": "4 days ago",
+     "string": "2026-10-27 17:20:45"
+    }
+   },
+   "relationships": {
+    "components": {
+     "data": []
+    },
+    "updates": {
+     "data": [
+      {
+       "type": "updates",
+       "id": "246"
+      },
+      {
+       "type": "updates",
+       "id": "247"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "88",
+   "type": "incidents",
+   "attributes": {
+    "id": 88,
+    "guid": "e1e379ea-ad21-411e-aab1-4e99f0314d84",
+    "name": "Qeysar Network Congestion ",
+    "message": "We are investigating network congestion in Qeysar Datacenter, which may affect network performance and connectivity for some services. Potential impacts include increased latency, packet loss, and reduced throughput.",
+    "visible": 1,
+    "stickied": false,
+    "notifications": false,
+    "status": {
+     "human": "Identified",
+     "value": 2
+    },
+    "occurred": {
+     "human": "3 weeks ago",
+     "string": "2026-10-10 00:08:38"
+    },
+    "created": {
+     "human": "2 weeks ago",
+     "string": "2026-10-11 00:28:46"
+    },
+    "updated": {
+     "human": "1 week ago",
+     "string": "2026-10-18 12:28:46"
+    }
+   },
+   "relationships": {
+    "components": {
+     "data": [
+      {
+       "type": "components",
+       "id": "58"
+      }
+     ]
+    },
+    "updates": {
+     "data": [
+      {
+       "type": "updates",
+       "id": "229"
+      },
+      {
+       "type": "updates",
+       "id": "230"
+      },
+      {
+       "type": "updates",
+       "id": "233"
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "meta": {
+  "current_page": 1,
+  "from": 1,
+  "path": "https://www.arvancloudstatus.ir/api/incidents",
+  "per_page": "100",
+  "to": 98
+ },
+ "included": [
+  {
+   "id": "249",
+   "type": "updates",
+   "attributes": {
+    "id": 249,
+    "updateable_id": 101,
+    "updateable_type": "incident",
+    "message": "Latency seemed to be deacreased but not completely resolved yet. We are still investigating the issue.",
+    "status": {
+     "human": "Investigating",
+     "value": 1
+    },
+    "created": {
+     "human": "1 day ago",
+     "string": "2026-10-30 06:26:55"
+    },
+    "updated": {
+     "human": "1 day ago",
+     "string": "2026-10-30 06:26:55"
+    }
+   }
+  },
+  {
+   "id": "250",
+   "type": "updates",
+   "attributes": {
+    "id": 250,
+    "updateable_id": 101,
+    "updateable_type": "incident",
+    "message": "The issue was resolved at 08:58, and we are currently monitoring the situation.\n",
+    "status": {
+     "human": "Watching",
+     "value": 3
+    },
+    "created": {
+     "human": "1 day ago",
+     "string": "2026-10-30 09:21:48"
+    },
+    "updated": {
+     "human": "1 day ago",
+     "string": "2026-10-30 09:27:23"
+    }
+   }
+  },
+  {
+   "id": "251",
+   "type": "updates",
+   "attributes": {
+    "id": 251,
+    "updateable_id": 101,
+    "updateable_type": "incident",
+    "message": "This issue is now resolved. If your service is still affected, please contact our support department.\n\n",
+    "status": {
+     "human": "Fixed",
+     "value": 4
+    },
+    "created": {
+     "human": "1 day ago",
+     "string": "2026-10-30 09:35:11"
+    },
+    "updated": {
+     "human": "1 day ago",
+     "string": "2026-10-30 09:35:11"
+    }
+   }
+  },
+  {
+   "id": "246",
+   "type": "updates",
+   "attributes": {
+    "id": 246,
+    "updateable_id": 100,
+    "updateable_type": "incident",
+    "message": "The DNS resolution issue has been resolved, and all domains are currently resolving correctly. We are continuing to monitor the situation to ensure service stability.",
+    "status": {
+     "human": "Watching",
+     "value": 3
+    },
+    "created": {
+     "human": "4 days ago",
+     "string": "2026-10-27 16:35:29"
+    },
+    "updated": {
+     "human": "4 days ago",
+     "string": "2026-10-27 16:35:29"
+    }
+   }
+  },
+  {
+   "id": "247",
+   "type": "updates",
+   "attributes": {
+    "id": 247,
+    "updateable_id": 100,
+    "updateable_type": "incident",
+    "message": "The DNS resolution issue has been resolved. All domains are now resolving correctly across all PoPs, and services are operating normally. The incident is resolved and can be closed.",
+    "status": {
+     "human": "Fixed",
+     "value": 4
+    },
+    "created": {
+     "human": "4 days ago",
+     "string": "2026-10-27 16:44:53"
+    },
+    "updated": {
+     "human": "4 days ago",
+     "string": "2026-10-27 16:44:53"
+    }
+   }
+  },
+  {
+   "id": "58",
+   "type": "components",
+   "attributes": {
+    "id": 58,
+    "name": "Qeysar - Network",
+    "description": null,
+    "link": null,
+    "order": null,
+    "status": {
+     "human": "Operational",
+     "value": 1
+    },
+    "enabled": true,
+    "meta": null,
+    "created": {
+     "human": "2 weeks ago",
+     "string": "2026-10-11 00:22:31"
+    },
+    "updated": {
+     "human": "2 weeks ago",
+     "string": "2026-10-11 00:22:31"
+    },
+    "pivot": {
+     "component_status": {
+      "human": "Performance Issues",
+      "value": 2
+     }
+    }
+   }
+  },
+  {
+   "id": "229",
+   "type": "updates",
+   "attributes": {
+    "id": 229,
+    "updateable_id": 88,
+    "updateable_type": "incident",
+    "message": "The issue appears to be resolved, and we are continuing to monitor the situation to ensure the network remains stable ",
+    "status": {
+     "human": "Watching",
+     "value": 3
+    },
+    "created": {
+     "human": "2 weeks ago",
+     "string": "2026-10-15 21:33:03"
+    },
+    "updated": {
+     "human": "2 weeks ago",
+     "string": "2026-10-15 21:33:03"
+    }
+   }
+  },
+  {
+   "id": "230",
+   "type": "updates",
+   "attributes": {
+    "id": 230,
+    "updateable_id": 88,
+    "updateable_type": "incident",
+    "message": "The incident has been resolved. If you continue to experience any issues, please contact our support team for further assistance.",
+    "status": {
+     "human": "Fixed",
+     "value": 4
+    },
+    "created": {
+     "human": "2 weeks ago",
+     "string": "2026-10-15 22:39:41"
+    },
+    "updated": {
+     "human": "2 weeks ago",
+     "string": "2026-10-15 22:39:41"
+    }
+   }
+  },
+  {
+   "id": "233",
+   "type": "updates",
+   "attributes": {
+    "id": 233,
+    "updateable_id": 88,
+    "updateable_type": "incident",
+    "message": "We have observed network congestion once again in the Qeysar data center, which may affect network performance and the connectivity of certain services. Potential impacts include increased latency, packet loss, and reduced throughput.\n",
+    "status": {
+     "human": "Identified",
+     "value": 2
+    },
+    "created": {
+     "human": "1 week ago",
+     "string": "2026-10-18 00:18:22"
+    },
+    "updated": {
+     "human": "1 week ago",
+     "string": "2026-10-18 00:18:22"
+    }
+   }
+  }
+ ]
+}

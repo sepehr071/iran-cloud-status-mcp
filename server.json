@@ -1,0 +1,32 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.sepehr071/iran-cloud-status-mcp",
+  "title": "Iran Cloud Status",
+  "description": "Read-only status, incidents and prices of Iranian clouds: Arvan, Hamravesh, Chabokan, Liara, more.",
+  "repository": {
+    "url": "https://github.com/sepehr071/iran-cloud-status-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://github.com/sepehr071/iran-cloud-status-mcp",
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "registryBaseUrl": "https://pypi.org",
+      "identifier": "iran-cloud-status-mcp",
+      "version": "0.1.0",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "IRAN_CLOUD_STATUS_MCP_PROXY",
+          "description": "Optional HTTP proxy URL for the status page requests; system proxy settings are ignored. Also accepts a comma-separated list: one is used until it gets blocked or fails to connect, then the next.",
+          "isRequired": false,
+          "isSecret": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+[
+ {
+  "id": 1,
+  "name": "دستیار مدیریت سرور",
+  "services": [
+   {
+    "id": 18,
+    "name": "دستیار مدیریت سرور",
+    "description": "",
+    "category": 1,
+    "category_name": "دستیار مدیریت سرور",
+    "status": "operational",
+    "status_display": "عملیاتی",
+    "status_color": "#10b981",
+    "order": 0,
+    "updated_at": "2026-06-13T15:04:50.992057+03:30"
+   }
+  ]
+ },
+ {
+  "id": 2,
+  "name": "سرور ابری",
+  "services": [
+   {
+    "id": 3,
+    "name": "کلاد چابکان - شاتل",
+    "description": "یشزشسزس",
+    "category": 2,
+    "category_name": "سرور ابری",
+    "status": "operational",
+    "status_display": "عملیاتی",
+    "status_color": "#10b981",
+    "order": 0,
+    "updated_at": "2026-01-23T23:26:27.684015+03:30"
+   },
+   {
+    "id": 22,
+    "name": "کلاد Hetzner",
+    "description": "",
+    "category": 2,
+    "category_name": "سرور ابری",
+    "status": "operational",
+    "status_display": "عملیاتی",
+    "status_color": "#10b981",
+    "order": 0,
+    "updated_at": "2026-01-23T23:26:37.698851+03:30"
+   },
+   {
+    "id": 23,
+    "name": "کلاد OVH",
+    "description": "",
+    "category": 2,
+    "category_name": "سرور ابری",
+    "status": "operational",
+    "status_display": "عملیاتی",
+    "status_color": "#10b981",
+    "order": 0,
+    "updated_at": "2026-01-23T23:26:49.234752+03:30"
+   },
+   {
+    "id": 24,
+    "name": "کلاد Vulter",
+    "description": "",
+    "category": 2,
+    "category_name": "سرور ابری",
+    "status": "operational",
+    "status_display": "عملیاتی",
+    "status_color": "#10b981",
+    "order": 0,
+    "updated_at": "2026-01-23T23:27:11.589904+03:30"
+   },
+   {
+    "id": 25,
+    "name": "کلاد One Provider",
+    "description": "",
+    "category": 2,
+    "category_name": "سرور ابری",
+    "status": "operational",
+    "status_display": "عملیاتی",
+    "status_color": "#10b981",
+    "order": 0,
+    "updated_at": "2026-01-23T23:27:45.794668+03:30"
+   },
+   {
+    "id": 26,
+    "name": "کلاد Digital Ocean",
+    "description": "",
+    "category": 2,
+    "category_name": "سرور ابری",
+    "status": "operational",
+    "status_display": "عملیاتی",
+    "status_color": "#10b981",
+    "order": 0,
+    "updated_at": "2026-01-23T23:28:16.583661+03:30"
+   }
+  ]
+ }
+]

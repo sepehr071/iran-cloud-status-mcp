@@ -1,0 +1,39 @@
+{
+ "count": 33,
+ "next": null,
+ "previous": null,
+ "results": [
+  {
+   "id": "095fe296-7b34-463b-95a4-045ccf778d2d",
+   "name": "Other",
+   "persian_name": "سرویس‌های بالادستی",
+   "group": null,
+   "status": "operational",
+   "is_under_maintenance": false
+  },
+  {
+   "id": "41fb8f7b-7ebd-4921-bce2-89aa745d2d14",
+   "name": "darkube-builder",
+   "persian_name": "بیلدر داخلی دارکوب",
+   "group": null,
+   "status": "operational",
+   "is_under_maintenance": false
+  },
+  {
+   "id": "774ee13c-2972-4e42-b4a9-d1b936c7b9ee",
+   "name": "darkube",
+   "persian_name": "دارکوب",
+   "group": null,
+   "status": "operational",
+   "is_under_maintenance": false
+  },
+  {
+   "id": "3092c577-8c5f-4449-bc80-272f3f6a22cb",
+   "name": "container-registry",
+   "persian_name": "کانتینر رجیستری",
+   "group": null,
+   "status": "major_outage",
+   "is_under_maintenance": false
+  }
+ ]
+}
