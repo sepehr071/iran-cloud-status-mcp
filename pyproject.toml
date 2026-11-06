@@ -1,6 +1,6 @@
 [project]
 name = "iran-cloud-status-mcp"
-version = "0.1.0"
+version = "0.2.0"
 description = "Unofficial read-only MCP server for Iranian cloud providers: live status, incidents, maintenance and public prices of ArvanCloud, Hamravesh, Chabokan and Liara."
 readme = "README.md"
 license = "MIT"
