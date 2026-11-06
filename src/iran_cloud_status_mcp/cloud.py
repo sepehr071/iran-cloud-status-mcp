@@ -67,13 +67,10 @@ def _short(i: dict, updates: bool, limit: int = 400) -> dict:
 
 @tool("Cloud status now")
 async def cs_status() -> dict[str, Any]:
-    """Show the live status of every Iranian cloud provider this server reads (ArvanCloud, Hamravesh, Chabokan, ParsPack, Mihan WebHost) in one call.
+    """Show the live status of every covered Iranian cloud provider in one call.
 
-    Use it first for "is X down?" or "what is broken right now?". Each provider gives its overall status, which
-    components are not operational, open incidents and upcoming maintenance counts. ParsPack has no component
-    status (only announcements; status 'notice' is an announcement, not an outage). Next: cs_regions for a
-    per-region view, cs_components for the full component list, cs_incident or cs_incidents for the timeline,
-    cs_maintenance for maintenance windows.
+    Use it first for "is X down?". Per provider: overall status, non-operational components, open incidents,
+    upcoming maintenance count. Next: cs_regions, cs_components, cs_incidents, cs_maintenance.
     """
 
     async def one(pid: str) -> dict:
@@ -114,10 +111,9 @@ async def cs_status() -> dict[str, Any]:
 
 @tool("Providers and coverage")
 async def cs_providers() -> dict[str, Any]:
-    """List the providers this server covers, what each one publishes, and which are not covered.
+    """List the providers covered, what each publishes, and which are not covered.
 
-    Use it to answer "which Iranian clouds can you check?" or to pick the right provider id for the other tools.
-    Makes no network calls.
+    No network calls.
     """
     return {
         "status": {
@@ -145,24 +141,20 @@ async def cs_providers() -> dict[str, Any]:
 
 @tool("Components of a provider")
 async def cs_components(
-    provider: Annotated[Provider, Field(description="arvancloud, hamravesh, chabokan, parspack or mihanwebhost.")],
+    provider: Annotated[Provider, Field(description="Provider id.")],
     query: Annotated[
         str | None,
         Field(
-            description="Only components whose name or group contains this text (case-insensitive, e.g. 'object storage' or 'registry').",
+            description="Name or group contains this text (case-insensitive).",
             max_length=60,
         ),
     ] = None,
-    only_issues: Annotated[bool, Field(description="True: list only components that are not operational.")] = False,
-    limit: Annotated[
-        int, Field(description="Most components to list (Mihan WebHost has over 200).", ge=1, le=500)
-    ] = 100,
+    only_issues: Annotated[bool, Field(description="Only non-operational components.")] = False,
+    limit: Annotated[int, Field(description="Most components to list.", ge=1, le=500)] = 100,
 ) -> dict[str, Any]:
-    """List one provider's status components (services, regions, clusters, servers) with their current status.
+    """List one provider's status components (services, regions, clusters, servers) with current status.
 
-    Use it for "is ArvanCloud object storage in Simin OK?" or to see what a provider monitors. Status is one of
-    operational, degraded, partial_outage, major_outage, maintenance. Names are as published: ArvanCloud English,
-    Hamravesh and Chabokan Persian, Mihan WebHost server names. Use cs_regions for one line per region.
+    Names are as published (ArvanCloud English, Hamravesh and Chabokan Persian). Use cs_regions for one line per region.
     """
     data = await providers.COMPONENTS[provider]()
     comps = data["components"]
@@ -189,15 +181,13 @@ async def cs_regions(
     provider: Prov = None,
     query: Annotated[
         str | None,
-        Field(description="Only regions whose name contains this text (e.g. 'simin' or 'ir-central1').", max_length=40),
+        Field(description="Region name contains this text, e.g. 'simin'.", max_length=40),
     ] = None,
 ) -> dict[str, Any]:
     """Summarise status per region or group: component count, worst status and what is not operational.
 
-    Use it for "is anything wrong in the Simin region?" or "which ArvanCloud region has problems?". Groups are the
-    provider's own: ArvanCloud regions (Bamdad, Simin, Forough, Shahriar, Goethe, Qeysar, Global), Hamravesh
-    Kubernetes cluster vs ungrouped, Chabokan service categories, Mihan WebHost server types. Next: cs_components
-    for the members, cs_incidents for what happened.
+    Groups are the provider's own (ArvanCloud regions, Hamravesh clusters, Chabokan categories, Mihan server types).
+    Next: cs_components for members, cs_incidents for what happened.
     """
 
     async def one(pid: str) -> dict:
@@ -223,23 +213,16 @@ async def cs_regions(
 @tool("Incidents")
 async def cs_incidents(
     provider: Prov = None,
-    days: Annotated[int, Field(description="Only incidents that started within this many days.", ge=1, le=365)] = 14,
-    active_only: Annotated[bool, Field(description="True: only incidents that are not resolved yet.")] = False,
-    query: Annotated[
-        str | None, Field(description="Only incidents whose title or components contain this text.", max_length=60)
-    ] = None,
-    updates: Annotated[
-        bool, Field(description="True: include the whole update timeline of each incident, not just the latest update.")
-    ] = False,
+    days: Annotated[int, Field(description="Started within this many days.", ge=1, le=365)] = 14,
+    active_only: Annotated[bool, Field(description="Only unresolved incidents.")] = False,
+    query: Annotated[str | None, Field(description="Title or components contain this text.", max_length=60)] = None,
+    updates: Annotated[bool, Field(description="Include the full update timeline, not just the latest.")] = False,
     limit: Annotated[int, Field(description="Most incidents to return, newest first.", ge=1, le=50)] = 10,
 ) -> dict[str, Any]:
     """List recent incidents (outages, degradations, announcements) of the Iranian cloud providers, newest first, with their latest update.
 
-    Use it for "what happened to ArvanCloud this week?" or "is the Hamravesh problem fixed?". Set updates=True for
-    the full investigating -> resolved timeline, or call cs_incident with an id from here. ParsPack entries are
-    announcements: status 'notice' while open, 'resolved' after, `components` are the affected product types.
-    Hamravesh history reaches back years but is paged, so large `days` values cost extra requests. For counts and
-    downtime see cs_reliability.
+    ParsPack entries are announcements (status 'notice' while open). Large `days` cost extra Hamravesh requests.
+    Next: cs_incident for one; cs_reliability for counts.
     """
     since = providers.cutoff(days)
 
@@ -268,19 +251,15 @@ async def cs_incidents(
 
 @tool("One incident in detail")
 async def cs_incident(
-    provider: Annotated[Provider, Field(description="arvancloud, hamravesh, chabokan or parspack.")],
+    provider: Annotated[Provider, Field(description="Provider id (not mihanwebhost).")],
     incident_id: Annotated[
         str,
-        Field(
-            description="The `id` from cs_incidents or cs_status (a number, or a UUID for Hamravesh).", max_length=60
-        ),
+        Field(description="`id` from cs_incidents or cs_status.", max_length=60),
     ],
 ) -> dict[str, Any]:
     """Show one incident with its full update timeline, affected components and the status each was set to.
 
-    Use it after cs_incidents or cs_status when you need the whole story of a specific outage ("what did
-    ArvanCloud say about incident 88?"). ArvanCloud and Chabokan have a detail endpoint; Hamravesh and ParsPack
-    incidents are looked up in their published history (Hamravesh: the latest ~800 entries).
+    Use it after cs_incidents or cs_status. Hamravesh lookup covers only the latest ~800 history entries.
     """
     if provider == "mihanwebhost":
         raise ApiError("Mihan WebHost publishes no incidents.")
@@ -293,16 +272,13 @@ async def cs_maintenance(
     provider: Prov = None,
     include_past: Annotated[
         bool,
-        Field(
-            description="True: also list finished windows from the last `days` days (default: only upcoming or running)."
-        ),
+        Field(description="Also list finished windows from the last `days` days."),
     ] = False,
-    days: Annotated[int, Field(description="With include_past: how far back to look.", ge=1, le=365)] = 30,
+    days: Annotated[int, Field(description="With include_past: look-back days.", ge=1, le=365)] = 30,
 ) -> dict[str, Any]:
     """List announced maintenance windows that are upcoming or running, per provider, optionally with recent finished ones.
 
-    Use it to check whether a planned change explains a disruption (include_past=True) or to warn about an
-    upcoming window. Empty means nothing is announced. Times are ISO with the zone (Iran time, +03:30).
+    Empty means nothing is announced.
     """
     since = providers.cutoff(days) if include_past else None
 
@@ -333,19 +309,16 @@ def _union_minutes(spans: list[tuple[datetime, datetime]]) -> float:
 @tool("Reliability over a period")
 async def cs_reliability(
     provider: Prov = None,
-    days: Annotated[int, Field(description="Look-back window in days.", ge=1, le=365)] = 30,
+    days: Annotated[int, Field(description="Look-back days.", ge=1, le=365)] = 30,
     query: Annotated[
         str | None,
-        Field(description="Only count incidents whose title or components contain this text.", max_length=60),
+        Field(description="Only incidents whose title or components contain this text.", max_length=60),
     ] = None,
 ) -> dict[str, Any]:
     """Count incidents and add up incident time per provider over the last days, with the most affected components.
 
-    Use it to compare how reliable the providers have been ("which Iranian cloud had the fewest incidents this
-    month?", or with query='object storage' for one service). Counts incidents that overlap the window. Minutes
-    run from an incident's start (or the window start) to its resolution (to now if still open) with overlapping
-    incidents counted once; incident_time_percent is the share of the window with at least one incident open.
-    That is not an uptime percentage: none of these providers publishes uptime, and a partial incident counts fully.
+    Use it to compare reliability. Overlapping incidents count once; incident_time_percent is the window share with
+    an incident open, not uptime (no provider publishes uptime).
     """
     since = providers.cutoff(days)
     now = datetime.now(timezone.utc)  # noqa: UP017
@@ -379,22 +352,20 @@ async def cs_reliability(
 async def cs_pricing(
     provider: Annotated[
         Priced,
-        Field(description="liara, hamravesh or chabokan. ArvanCloud prices are not readable (see cs_providers)."),
+        Field(description="Provider id; ArvanCloud prices are not readable."),
     ],
     product: Annotated[
         str | None,
         Field(
-            description="Liara only: PaaS, DBaaS, IaaS, WordPress, Email, AI or ObjectStorage (default: all).",
+            description="Liara only: PaaS, DBaaS, IaaS, WordPress, Email, AI or ObjectStorage (default all).",
             max_length=20,
         ),
     ] = None,
 ) -> dict[str, Any]:
     """Show a provider's public price list in Toman, read from its own pricing page.
 
-    Liara: fixed plans per product (PaaS, DBaaS, IaaS and WordPress with RAM, vCPU, disk; Email, AI, ObjectStorage
-    with their own columns), monthly and hourly. Hamravesh: per-unit prices (vCore, GB RAM, GB SSD) in its Iran and
-    Germany datacenters plus traffic, IP and monitoring fees. Chabokan: the starting price of each product. Use
-    cs_compare_prices to price one specific server size across providers.
+    Liara: fixed plans per product; Hamravesh: per-unit prices (Iran and Germany); Chabokan: starting prices.
+    Use cs_compare_prices to price one server size.
     """
     if provider == "hamravesh":
         return await pricing.hamravesh()
@@ -417,9 +388,7 @@ async def cs_compare_prices(
 ) -> dict[str, Any]:
     """Price one server size (vCPU, RAM, disk) per month at Hamravesh and Liara, cheapest first.
 
-    Hamravesh charges per unit (exact size, Iran or Germany datacenter). Liara sells fixed plans, so the answer is
-    the cheapest PaaS and IaaS plan that is at least as big (IaaS also pays a monthly IPv4 fee). Traffic is not
-    included. ArvanCloud and Chabokan are not compared: no readable plan table.
+    Liara: cheapest PaaS and IaaS plan at least that big. Traffic excluded; ArvanCloud and Chabokan not compared.
     """
     liara, ham = await asyncio.gather(pricing.liara(), pricing.hamravesh())
     offers = []

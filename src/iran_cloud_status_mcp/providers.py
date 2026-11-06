@@ -194,7 +194,7 @@ def _hamravesh_incident(d: dict) -> dict:
         {"status": r["tag"].lower(), "at": r["creation_time"], "text": r["text"].strip()} for r in d.get("reports", [])
     ]
     ups.sort(key=lambda u: u["at"], reverse=True)
-    ended = d.get("end_time")
+    ended = re.sub(r"\.\d+", "", d["end_time"]) if d.get("end_time") else None
     return {
         "id": d["id"],
         "title": d["text"].strip(),

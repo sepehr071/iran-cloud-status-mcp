@@ -16,16 +16,9 @@ ArvanCloud (آروان), Hamravesh (هم\u200cروش), Chabokan (چابکان), 
 status; Liara (لیارا), Hamravesh and Chabokan for prices. It reads the same data those sites show anyone, with no
 account. Nothing here can log in or change anything.
 
-Tools: cs_status (everything broken right now, all providers), cs_regions (status per region or group),
-cs_components (one provider's services with status), cs_incidents (recent incidents and their update timeline),
-cs_incident (one incident in full), cs_maintenance (announced windows, optionally recent finished ones),
-cs_reliability (incident counts and incident time over N days), cs_pricing (Liara plans, Hamravesh per-unit
-prices, Chabokan starting prices), cs_compare_prices (price one vCPU/RAM/disk size across providers),
-cs_providers (what is covered, no network).
-
-Typical flows: "is Arvan down?" -> cs_status, then cs_incidents(provider="arvancloud", active_only=true, updates=true).
-"Is Simin OK?" -> cs_regions(provider="arvancloud", query="simin"). "Which cloud was most stable this month?" ->
-cs_reliability. "Cheapest 2 vCPU / 4 GB server" -> cs_compare_prices.
+Flows: "is Arvan down?" -> cs_status, then cs_incidents(provider="arvancloud", active_only=true, updates=true).
+"Is Simin OK?" -> cs_regions(provider="arvancloud", query="simin"). Most stable cloud -> cs_reliability.
+Cheapest 2 vCPU / 4 GB -> cs_compare_prices. cs_providers lists coverage (no network).
 Status words: operational, degraded, partial_outage, major_outage, maintenance. Times are ISO in Iran time (+03:30).
 Prices are Toman. ParsPack has announcements only (status 'notice' is an announcement, not an outage); Mihan WebHost
 has only the up/down of its servers. Liara has no status page; ArvanCloud prices are not readable.
