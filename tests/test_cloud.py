@@ -4,15 +4,22 @@ import httpx
 import pytest
 from conftest import fixture, page
 
-from iran_cloud_status_mcp import providers
+from iran_cloud_status_mcp import cloud, providers
 
 pytestmark = pytest.mark.anyio
+
+
+class _Nov1(datetime):
+    @classmethod
+    def now(cls, tz=None):
+        return datetime(2026, 11, 1, tzinfo=timezone.utc)
 
 
 @pytest.fixture
 def clouds(api, monkeypatch):
     # Fixtures are from 2026-10-31; pin the window start so day counts keep matching.
     monkeypatch.setattr(providers, "cutoff", lambda days: datetime(2026, 10, 31 - min(days, 30), tzinfo=timezone.utc))
+    monkeypatch.setattr(cloud, "datetime", _Nov1)  # open incidents run until "now"
     api["/api/components"] = fixture("arvan_components.json")
     api["/api/status"] = fixture("arvan_status.json")
     api["/api/incidents"] = fixture("arvan_incidents.json")
